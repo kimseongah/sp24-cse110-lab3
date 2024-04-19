@@ -1,0 +1,141 @@
+/* Main CSS file for the CSE 110 Team Project */
+
+/* Color - Using variables for themes */
+:root {
+    --accent-color: rgb(0, 69, 124);
+    --text-color: hsl(0, 0%, 20%);
+}
+
+body {
+    color: var(--text-color);
+    font-family: 'Roboto', sans-serif;
+    margin: 10vw; /* changed to viewport width (relative unit) */
+}
+
+* {
+    background-color: #f0f0f0;
+}
+
+#main-title, .section-title {
+    color: var(--accent-color);
+    font-size: 2em; /* using em (relative unit) */
+}
+
+#date {
+    text-align: right;
+    width: 100%;
+}
+
+/* CSS Variables with Fallback */
+#attendance {
+    color: var(--text-color, black);
+}
+
+/* Background */
+body {
+    background-color: rgb(240, 240, 240);
+}
+
+/* Units */
+h1 {
+    margin-bottom: 2rem; /* using a relative unit (rem) */
+}
+p {
+    font-size: 1.25cm; /* using an absolute unit (cm) */
+}
+
+/* Box Model */
+/* Shorthand for padding and margin */
+.container {
+    padding: 2vh; /* using viewport height (relative unit) */
+    margin: auto;
+    width: 500mm; /* using mm (absolute unit) */
+}
+
+/* Borders */
+.schema-img {
+    border: 5px solid var(--accent-color);
+    border-radius: 10px;
+    width: 50%;
+    height: auto;
+}
+
+/* Display and Flexbox */
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Grid Layout for unordered lists */
+ul {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+}
+
+/* Positioning */
+.fixed-date {
+    position: fixed;
+    right: 0px;
+    top: 0px;
+    background-color: var(--accent-color);
+    color: #f0f0f0;
+    padding: 5px;
+}
+
+/* Pseudo-classes */
+#main-title:hover {
+    background-color: var(--accent-color);
+    color: white;
+}
+
+
+#main-title:active {
+    background-color: black;
+    color: white;
+}
+
+
+/* Attribute Selector */
+[data-role="main"] {
+    border: 3px solid #333; /* adds a solid border */
+    padding: 10px; /* adds padding inside the elements */
+    background-color: #f4f4f4; /* sets a background color */
+}
+
+/* Child Combinator */
+.container > h3 {
+    color: rgb(0, 0, 55);
+}
+
+/* General Sibling Combinator */
+h3 ~ ul {
+    background-color: lightgrey;
+}
+
+/* Adjacent Sibling Combinator */
+h3 + h3 {
+    margin-top: -10px;
+}
+
+/* Selector List */
+#main-title, #section-title, h1 {
+    text-align: center;
+}
+
+/* :has() Selector */
+.container:has(> .media) {
+    border: 5px solid green;
+}
+
+
+/* Responsiveness */
+@media (max-width: 600px) {
+    .section-title, #main-title {
+        text-align: center;
+    }
+}
+
+/* Import Google Font */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
